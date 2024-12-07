@@ -1,0 +1,234 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Satoshi', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Navbar Styling */
+header {
+    position: relative;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0)),
+        url('./image/Hero Image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    overflow: hidden;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 5%;
+    color: white;
+    z-index: 1000;
+}
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #00bcd4;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover {
+    color: #fdd835;
+}
+.nav-links a:hover::before {
+    width: 100%;
+}
+.contact-btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+.contact-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 188, 212, 0.2); 
+    z-index: 0;
+    transition: left 0.3s ease;
+}
+.contact-btn:hover::after {
+    left: 0;
+}
+.contact-btn:hover {
+    color: black; 
+    z-index: 1;
+}
+.hero{
+    display: flex;
+    justify-content: space-between;
+}
+.hero-text {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 3rem;
+    width: 60%;
+    color: white;
+  }
+.hero-text h1 {
+    font-weight: 400;
+    line-height: 1;
+}
+.hero-text h1 span {
+   font-weight: 700;
+}
+.scroll-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    background: none;
+    border: 2px solid #fdd835;
+    color: #fdd835;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+.scroll-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 65%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+/* Hover Effect for Scroll Button */
+.scroll-btn:hover .arrow {
+    transform: translateY(5px) rotate(45deg);
+}
+/* Animation for Scroll Button */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+.image-gallery {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    background-color: rgba(169, 169, 169, 0.5);
+    padding: 8px;
+    border-radius: 12px;
+}
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.thumbnails img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+    .scroll-btn {
+    bottom: 30px;
+    left: 60%;
+    }
+    .image-gallery{
+        width: 22%;
+    }
+}
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .scroll-btn {
+        bottom: 30px;
+        left: 60%;
+    }
+
+    .scroll-btn span {
+        font-size: 1.2rem; /* Smaller icon size on tablets */
+    }
+    .thumbnails {
+        gap: 4%;
+    }
+    .image-gallery{
+        width: 20%;
+    }
+}
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .scroll-btn {
+        bottom: 5px;
+        padding: 5px 10px;
+        left: 5%;
+    }
+
+    .scroll-btn span {
+        font-size: 1rem; /* Smaller icon size on mobile */
+    }
+    .image-gallery{
+        display: none;
+    }
+}
