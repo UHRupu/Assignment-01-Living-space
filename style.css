@@ -67,35 +67,38 @@ header {
     transition: width 0.3s ease;
 }
 .nav-links a:hover::before {
-    width: 100%;
+    width: 100%;  
+}
+.nav-links a:hover {
+    color: #ffd806;
 }
 .contact-btn {
-    background: white;
+    background: white; 
     color: black;
     padding: 10px 20px;
     border-radius: 15px;
     text-decoration: none;
     position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease;
+    overflow: hidden; /* Ensures ::after stays within the button bounds */
+    z-index: 1; /* Keeps the text above the ::after pseudo-element */
+    transition: color 0.3s ease; /* Smooth text color transition */
 }
 .contact-btn::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -100%; /* Starts off-screen to the left */
     width: 100%;
     height: 100%;
-    background: rgba(0, 188, 212, 0.2); 
-    z-index: 0;
-    transition: left 0.3s ease;
+    background: black; 
+    z-index: -1; /* Places it behind the button text */
+    transition: left 0.3s ease; /* Smooth sliding transition */
 }
 .contact-btn:hover::after {
-    left: 0;
+    left: 0; /* Moves the background to cover the button on hover */
 }
 .contact-btn:hover {
-    color: black; 
-    z-index: 1;
+    color: white; /* Changes text color to white */
 }
 .hero{
     display: flex;
@@ -200,10 +203,10 @@ header {
         font-size: 1.2rem; /* Smaller icon size on tablets */
     }
     .thumbnails {
-        gap: 4%;
+        gap: 5px;
     }
     .image-gallery{
-        width: 20%;
+        width: 22%;
     }
 }
 @media (max-width: 480px) {
@@ -231,6 +234,12 @@ header {
     .contact-btn {
         background: black;
         color: white;
+    }
+    .contact-btn::after {
+        background:white; 
+    }
+    .contact-btn:hover {
+        color:black; 
     }
     .scroll-btn {
         bottom: 15px;
