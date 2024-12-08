@@ -177,6 +177,343 @@ header {
 .thumbnails img:hover {
     transform: scale(1.1);
 }
+/* 1st siction style start */
+.first-container {
+    width: 92%;
+    height:40%;
+    margin: 0 auto;
+}
+
+.first-part {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding: 20px;
+}
+
+.first-part h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.first-part p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.first-heading{
+    width: 30%;
+}
+.description{
+    width: 50%;
+    height:100%;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border: 2px solid black; /* Border matches the background color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* For pseudo-element animations */
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay effect */
+    transition: left 0.3s ease;
+    z-index: 0; /* Below text */
+}
+
+.btn:hover::before {
+    left: 0; /* Slide effect on hover */
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    border-color: black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+.btn:hover span {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text-shadow effect */
+}
+.features { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around;  
+} 
+.feature { 
+    flex: 1 1 30%; 
+    margin: 10px;  
+    border-radius: 8px; 
+    overflow: hidden; /* Prevents content from overflowing during hover */
+    position: relative; /* Required for positioning hover effects */
+    box-shadow: none; /* Remove box-shadow */
+    transition: transform 0.3s, box-shadow 0.3s; 
+} 
+.feature:hover { 
+    transform: none; /* Remove hover movement */
+    box-shadow: none; /* Remove box-shadow on hover */
+} 
+.feature img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    transition: transform 0.3s, filter 0.3s; 
+}
+.feature:hover img {
+    transform: scale(1.1); /* Slight zoom-in effect */
+    filter: brightness(0.8); /* Dim the image slightly */
+}
+.feature::before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s;
+    z-index: 1; /* Place the overlay above the image */
+}
+.feature:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+.feature h3, .feature p {
+    position: relative; /* Required for z-index to work */
+    z-index: 2; /* Ensure text is above overlay */
+    color: #333; /* Default color */
+    transition: color 0.3s;
+}
+
+.feature:hover h3 {
+    color: #ffcc00;
+} 
+.middle-feature img {
+    margin-top: 50%; /* Smaller height for middle feature */
+    object-fit: cover; /* Maintain aspect ratio */
+    width: 100%; /* Full width */
+    border-radius: 8px;
+}
+/* 2nd section start */
+.details{
+    width: 92%;
+    margin: 0 auto;
+    padding-top: 20px ;
+}
+.content-details{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.property-title{
+    width:45%;
+}
+.property-title h2 {
+    font-size: 2rem; 
+    font-weight: 400;
+}
+.text-description{
+    width: 45%;
+}
+.text-description p{
+    font-size: 1rem; 
+    padding-left: 20px;
+}
+/* card images */
+
+.first-row {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%; /* Gap between property cards */
+}
+
+/* Property Card Styling */
+.property-card, .third-image {
+    overflow: hidden;
+    max-width: 450px;
+    border-radius: 12px;
+    flex: 1 1 calc(33.33% - 20px);
+}
+/* Image and Tags */
+.image-container {
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+.tags {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+.tags span {
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+.room-details {
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    font-size: 1rem;
+    color: #333;
+}
+.price p{
+    font-size: 0.8rem
+}
+.divider {
+    border: none;
+    border-top: 1px solid #ddd; /* Light gray border */
+    margin:5% 0; /* Space above and below the divider */
+}
+/* Available Details */
+.available {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    color: #555;
+}
+.last-two-row{
+    padding-top: 2%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+.view-more {
+    margin-bottom: 8%;
+    padding-top: 2%;
+   text-align:  center;
+}
+/* 3rd section styling */
+
+.que-section {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 20px; */
+  }
+  
+  .que-header {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .que-header h1 {
+    font-size: 2.5rem;
+    color: #222;
+  }
+  
+  .que-header p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* FAQ Container */
+  .que-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Image Section */
+  .que-image {
+    flex: 1 1 48%; /* Adjusts to 50% on larger screens */
+  }
+  
+  .que-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  /* FAQ List Section */
+  .que-list {
+    flex: 1 1 48%; /* Adjusts to 50% on larger screens */
+  }
+  
+  .que-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .que-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .que-list li span {
+    color: #aaa;
+    font-weight: bold;
+  }
+  
+  .que-list li.active {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .que-list li.active p {
+    margin: 0;
+  }
+  
+  .que-list li.active .answer {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-text h1 {
@@ -189,8 +526,21 @@ header {
     .image-gallery{
         width: 22%;
     }
+    .price p{
+        font-size: 0.7rem;
+    }
+    .room-details p {
+        font-size: 0.7rem;
+     }
+    .third-image {
+        display: block; /* Show the 3rd card for larger screens */
+    }
+    .available {
+        font-size: 0.7rem;
+    }
 }
 @media (max-width: 768px) {
+    /* header  */
     .hero-text h1 {
         font-size: 2.5rem;
     }
@@ -200,13 +550,54 @@ header {
     }
 
     .scroll-btn span {
-        font-size: 1.2rem; /* Smaller icon size on tablets */
+        font-size: 1.2rem; 
     }
     .thumbnails {
         gap: 5px;
     }
     .image-gallery{
         width: 22%;
+    }
+    /* 1st section */
+    .first-part {
+        flex-direction: column;
+    }
+    .first-content {
+        max-width: 100%;
+        gap: 10px;
+    }
+    .first-heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .first-content h1 {
+        font-size: 2rem;
+        margin: 0;
+        flex: 2;
+    }
+    .btn {
+        flex: 1;                 
+        height: 40px;             
+        padding: 0 20px;          
+        font-size: 0.8rem;         
+        margin-left: 10px;        
+        width: auto; 
+        white-space: nowrap;             
+        line-height: 40px;         
+    }
+    .first-content p {
+        font-size: 1rem;
+    }
+    .first-heading{
+        width: 100%;
+    }
+    .description{
+        width: 100%;
+        height:100%;
+    }
+    .third-image{
+        display: none;
     }
 }
 @media (max-width: 480px) {
@@ -220,7 +611,7 @@ header {
         color: white;
     }
     .hero-text  {
-    line-height: 1.5;
+        line-height: 1.5;
     }
     .navbar {
         flex-direction: column;
@@ -249,4 +640,88 @@ header {
     .image-gallery{
         display: none;
     }
+    /* 1st section styling */
+    .first-content {
+        gap: 0px;
+    }
+    .first-content h1 {
+        font-size: 1.5rem;
+
+    }
+    .first-heading{
+        display: flex;
+        flex-direction: column;     
+        align-items:start;     
+        gap: 10px;                  
+    }
+    .btn {
+        display: block;                       
+        margin-left: 0px; 
+        margin-bottom: 20px;               
+    }
+    .features {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .feature {
+        flex: 1 1 calc(33.333% - 20px);
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .feature img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .feature h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .feature p {
+        font-size: 1em;
+        color: #555;
+    }
+    
+    .feature-large {
+        flex: 2 1 calc(66.666% - 20px);
+    }
+    
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .middle-feature img {
+        margin-top: 0; 
+    }
+    /* 2nd section styling */
+.content-details{
+    flex-direction: column;
+}
+.property-title{
+    width:92%;
+    padding-left: 20px; 
+}
+
+.text-description{
+    width: 92%;
+}
+.first-row{
+   flex-direction:column;
+}
+.last-two-row{
+    flex-direction:column;
+ }
+ .view-more {
+align-items: center;
+}
 }
