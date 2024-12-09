@@ -365,15 +365,84 @@ header {
     top: 10px;
     right: 10px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    z-index: 10;
 }
+
+/* Tag Design */
 .tags span {
-    background: #000;
+    background: linear-gradient(135deg, #000, #333); /* Black gradient */
     color: #fff;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Animation */
+    animation: scaleUp 3s infinite ease-in-out;
 }
+
+/* Before Element for Shine Effect */
+.tags span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(45deg);
+
+    /* Animation */
+    animation: shine 3s infinite ease-in-out;
+}
+
+/* Keyframes for Scale Animation */
+@keyframes scaleUp {
+    0%, 100% {
+        transform: scale(1); /* Default size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly larger, no translation to avoid shake */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Keyframes for Shine Animation */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Icon Customization */
+.tags span i {
+    margin-right: 8px;
+    animation: rotateIcon 3s infinite ease-in-out;
+}
+
+/* Keyframes for Icon Rotation */
+@keyframes rotateIcon {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
 .room-details {
     display: flex;
     justify-content: space-between;
